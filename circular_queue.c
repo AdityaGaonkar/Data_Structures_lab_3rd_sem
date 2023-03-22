@@ -32,7 +32,7 @@ void insertCQ(struct c_queue *cq,float ele){
         cq->count++;
     }
     else{
-        printf("queue overflow");
+        printf("Queue overflow");
     }
 }
 float deleteCQ(struct c_queue *cq){
