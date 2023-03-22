@@ -26,7 +26,7 @@ void push(struct stack *s,char c){
     else
     printf("stack overflow");
 }
-int pop(struct stack *s){
+char pop(struct stack *s){
     if(isEmpty(s->top)==1){
         return s->ele[s->top--];
     }
