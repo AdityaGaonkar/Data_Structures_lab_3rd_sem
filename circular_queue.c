@@ -51,10 +51,10 @@ void display(struct c_queue cq)
 {
     int point=cq.front;
     if (cq.count==0)
-            {
+        {
         /* code */
         printf("no elements");
-            }
+        }
     
     for (int i = 0; i < cq.count; i++)
     {
