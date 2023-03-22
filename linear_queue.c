@@ -67,7 +67,7 @@ void main(){
     while (1)
     {
         /* code */
-        printf("\n1.To insert a new phone number\n2.To delete a phone number\n3.display\n4.exit");
+        printf("\n1.To insert a new phone number\n2.To delete a phone number\n3.Display\n4.Exit");
         printf("\nenter your choice\n");
         scanf("%d",&ch);
         switch (ch)
