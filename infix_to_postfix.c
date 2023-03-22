@@ -115,7 +115,7 @@ void infix_to_postfix(char inf[20],char postfix[20]){
 }
 void main(){
     char infix[MAX],postfix[MAX];
-    printf("enter infix expression \n");
+    printf("enter infix expression\n");
     scanf("%s",infix);
     infix_to_postfix(infix,postfix);
 }
