@@ -25,6 +25,41 @@ NODE insertFront(NODE p,int ele){
     p->left=q;
     return q;
 }
+NODE insertPos(NODE p,int ele,int pos){
+    NODE q=getnode();
+    q->data=ele;
+    q->right=NULL;
+    q->left=NULL;
+    if (p==NULL)
+    {
+        return q;
+    }
+    if(pos==1){
+        q->right=p;
+        p->left=q;
+        return q;
+    }
+    NODE s=p;
+    for (int i = 1; i < pos; i++)
+    {
+        /* code */
+        s=s->right;
+        if (s==NULL)
+        {
+            /* code */
+            printf("position is greater than size of the list\n");
+            s->right=q;
+            q->left=s;
+            return p;
+        }
+    }
+    NODE temp=s->left;
+    temp->right=q;
+    q->left=temp;
+    q->right=s;
+    s->left=q;
+    return p;
+}
 NODE deletePos(NODE p,int pos){
     NODE s=p;
     if(p==NULL){
@@ -78,7 +113,7 @@ void main(){
     NODE p=NULL;
     int choice,ele,pos;
     while(1){
-        printf("\n1.Insert at front\n2.Delete at pos\n3.display\n4.reverse order\n5.exit\n");
+        printf("\n1.Insert at front\n2.Delete at pos\n3.display\n4.reverse order\n5.insert at pos\n");
         printf("\nEnter the choice\n");
         scanf("%d",&choice);
         switch(choice){
@@ -97,6 +132,13 @@ void main(){
             break;
             case 4:
             reverselist(p);
+            break;
+            case 5:
+            printf("enter the element\n");
+            scanf("%d",&ele);
+            printf("enter the psoition\n");
+            scanf("%d",&pos);
+            p=insertPos(p,ele,pos);
             break;
             default:
             printf("wrong choice\n");
